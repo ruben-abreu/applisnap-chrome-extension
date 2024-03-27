@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "AppliSnap",
+  "version": "1.0",
+  "description": "Add job applications from any website.",
+  "permissions": ["activeTab", "storage"],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "/public/pwa-144x144.png",
+      "48": "/public/pwa-144x144.png",
+      "128": "/public/pwa-144x144.png"
+    }
+  },
+  "background": {
+    "service_worker": "background/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+    "16": "/public/pwa-144x144.png",
+    "48": "/public/pwa-144x144.png",
+    "128": "/public/pwa-144x144.png"
+  },
+
+  "host_permissions": ["<all_urls>"]
+}

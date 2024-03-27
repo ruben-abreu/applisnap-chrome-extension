@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Add Job Application</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .main-color {
+            color: #678B85;
+        }
+
+        .main-bg {
+            background-color: #678B85;
+        }
+
+        .main-border {
+            border-color: #1F2D16;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 max-w-5xl">
+    <div class="max-w-5xl mx-auto p-8 bg-white rounded shadow-lg ">
+        <h1 id="loginMessage" class="main-color text-3xl text-center pb-6">Login to AppliSnap</h1>
+        <div id="login-form">
+            <form id="loginForm">
+                <div class="error-message text-red-500" id="error-message" style="display: none;"></div>
+                <label for="email" class="main-color ">Email:</label><br>
+                <input type="email" id="email" name="email" required
+                    class="main-border block w-full px-4 py-2 mt-1 mb-4 border-2 border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-200 focus:border-indigo-500 ">
+                <label for="password" class="main-color">Password:</label><br>
+                <input type="password" id="password" name="password" required
+                    class="main-border block w-full px-4 py-2 mt-1 mb-4 border-2 border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-200 focus:border-indigo-500">
+                <button type="submit"
+                    class="main-bg text-white font-semibold py-2 px-4 rounded hover:bg-opacity-75 focus:outline-none focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full">
+                    Login
+                </button>
+            </form>
+        </div>
+        <div id="welcome-container" class="max-w-md mx-auto p-6 bg-white rounded shadow-lg" style="display: none;">
+            <h2 id="welcome-message" class="main-color text-xl mb-4"></h2>
+            <h2 class="main-color text-xl mb-4">AppliSnap</h2>
+            <button id="logoutBtn"
+                class="main-bg text-white font-semibold py-2 px-4 rounded hover:bg-opacity-75 focus:outline-none focus:ring focus:ring-indigo-200 focus:ring-opacity-50 ml-auto">
+                Log Off
+            </button>
+        </div>
+        <hr class="my-8">
+        <form id="addJobForm" class="max-w-md mx-auto p-8 bg-white rounded shadow-lg" style="display: none;">
+            <h2 class="main-color text-2xl mb-4">Add Job Application</h2>
+            <div class="form-group mb-4">
+                <label for="companyName" class="main-color">Company Name:</label>
+                <input type="text" id="companyName"
+                    class="main-border block w-full px-4 py-2 mt-1 border-2 border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-200 focus:border-indigo-500"
+                    required />
+            </div>
+            <div class="form-group mb-4">
+                <label for="roleName" class="main-color">Role:</label>
+                <input type="text" id="roleName"
+                    class="main-border block w-full px-4 py-2 mt-1 border-2 border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-200 focus:border-indigo-500"
+                    required />
+            </div>
+            <div class="form-group mb-4">
+                <label for="domain" class="main-color">Company Website:</label>
+                <input type="text" id="domain"
+                    class="main-border block w-full px-4 py-2 mt-1 border-2 border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-200 focus:border-indigo-500" />
+            </div>
+            <div class="form-group mb-4">
+                <label for="jobURL" class="main-color">Job URL:</label>
+                <input type="text" id="jobURL"
+                    class="main-border block w-full px-4 py-2 mt-1 border-2 border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-200 focus:border-indigo-500" />
+            </div>
+            <div class="form-group mb-4">
+                <label for="jobDescription" class="main-color">Job Description:</label>
+                <textarea id="jobDescription"
+                    class="main-border block w-full px-4 py-2 mt-1 border-2 border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-200 focus:border-indigo-500"
+                    rows="4"></textarea>
+            </div>
+            <div class="form-group mb-4">
+                <label for="workLocation" class="main-color">Work Location:</label>
+                <input type="text" id="workLocation"
+                    class="main-border block w-full px-4 py-2 mt-1 border-2 border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-200 focus:border-indigo-500" />
+            </div>
+            <div class="form-group mb-4">
+                <label for="workModel" class="main-color">Work Model:</label>
+                <select id="workModel"
+                    class="main-border block w-full px-4 py-2 mt-1 border-2 border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-200 focus:border-indigo-500">
+                    <option value="On-Site">On-Site</option>
+                    <option value="Remote">Remote</option>
+                    <option value="Hybrid">Hybrid</option>
+                </select>
+            </div>
+            <div class="form-group mb-4">
+                <label for="notes" class="main-color">Notes:</label>
+                <textarea id="notes"
+                    class="main-border block w-full px-4 py-2 mt-1 border-2 border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-200 focus:border-indigo-500"
+                    rows="2"></textarea>
+            </div>
+            <div class="form-group mb-4">
+                <label for="list" class="main-color">List:</label>
+                <select id="list"
+                    class="main-border block w-full px-4 py-2 mt-1 border-2 border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-200 focus:border-indigo-500">
+                </select>
+            </div>
+            <div class="form-group mb-4">
+                <label for="board" class="main-color">Board:</label>
+                <select id="board"
+                    class="main-border block w-full px-4 py-2 mt-1 border-2 border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-200 focus:border-indigo-500">
+                </select>
+            </div>
+            <div class="form-group mb-4">
+                <label for="date" class="main-color">Date:</label>
+                <input type="date" id="date" name="date"
+                    class="main-border block w-full px-4 py-2 mt-1 border-2 border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-200 focus:border-indigo-500" />
+            </div>
+            <div class="form-group mb-4">
+                <label for="dateLabel" class="main-color">Date Label:</label>
+                <select id="dateLabel"
+                    class="main-border block w-full px-4 py-2 mt-1 border-2 border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-200 focus:border-indigo-500">
+                    <option value="created">Created</option>
+                    <option value="applied">Applied</option>
+                    <option value="interviews">Interviews</option>
+                    <option value="offer">Offer</option>
+                    <option value="rejected">Rejected</option>
+                </select>
+            </div>
+            <div class="form-group mb-4">
+                <label for="starred" class="main-color">Starred:</label>
+                <input type="checkbox" id="starred" />
+            </div>
+            <button type="submit"
+                class="main-bg text-white font-semibold py-2 px-4 rounded hover:bg-opacity-75 focus:outline-none focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full">
+                Add job
+            </button>
+            <div id="success-message" class="main-color" style="display: none; color: #678B85;"></div>
+        </form>
+
+    </div>
+
+    <script src="axios.min.js"></script>
+    <script src="popup.js"></script>
+</body>
+
+</html>
