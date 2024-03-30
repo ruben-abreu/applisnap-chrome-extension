@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', async function () {
-  const baseURL = `http://localhost:5005`;
+  const baseURL = `https://applisnap-backend.onrender.com`;
 
   const handleLogin = async (email, password) => {
     try {
