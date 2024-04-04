@@ -3,7 +3,7 @@
   "name": "AppliSnap",
   "version": "1.0",
   "description": "Add job applications from any website.",
-  "permissions": ["activeTab", "storage"],
+  "permissions": ["storage"],
   "action": {
     "default_popup": "popup/popup.html",
     "default_icon": {
